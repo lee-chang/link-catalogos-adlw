@@ -19,15 +19,6 @@ app.get('/', function(req, res) {
 });
 
 
-app.use('/catalogos', express.static('public/catalogos'), serveIndex('public/catalogos/media', {
-  icons: true,
-  template: 'public/catalogos/template.html',
-  stylesheet: rootStyleCat
-}))
-
-
-
-
 var job = new CronJob(
 	'*/5 * * * *',
 	function() {
@@ -55,27 +46,27 @@ class Main {
           const page = await browser.newPage()
           //Todos los productos
           await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual',  {timeout: 0} )
-          await page.pdf({ path: 'public/catalogos/media/TodasTallas-Zicaa.pdf', format: 'A5'})
+          await page.pdf({ path: 'public/pdfs/TodasTallas-Zicaa.pdf', format: 'A5'})
       
           //Todos los productos talla 35
           await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual?idTalla=3',  {timeout: 0} )
-          await page.pdf({ path: 'public/catalogos/media/Talla35-Zicca.pdf', format: 'A5'})
+          await page.pdf({ path: 'public/pdfs/Talla35-Zicca.pdf', format: 'A5'})
       
           //Todos los productos talla 36
           await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual?idTalla=4',  {timeout: 0} )
-          await page.pdf({ path: 'public/catalogos/media/Talla36-Zicca.pdf', format: 'A5'})
+          await page.pdf({ path: 'public/pdfs/Talla36-Zicca.pdf', format: 'A5'})
       
           //Todos los productos talla 37
           await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual?idTalla=5',  {timeout: 0} )
-          await page.pdf({ path: 'public/catalogos/media/Talla37-Zicca.pdf', format: 'A5'})
+          await page.pdf({ path: 'public/pdfs/Talla37-Zicca.pdf', format: 'A5'})
       
           //Todos los productos talla 38
           await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual?idTalla=6',  {timeout: 0} )
-          await page.pdf({ path: 'public/catalogos/media/Talla38-Zicca.pdf', format: 'A5'})
+          await page.pdf({ path: 'public/pdfs/Talla38-Zicca.pdf', format: 'A5'})
       
           //Todos los productos talla 39
           await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual?idTalla=7',  {timeout: 0} )
-          await page.pdf({ path: 'public/catalogos/media/Talla39-Zicca.pdf', format: 'A5'})
+          await page.pdf({ path: 'public/pdfs/Talla39-Zicca.pdf', format: 'A5'})
       
           await browser. close()
       
