@@ -6,9 +6,8 @@ const serveIndex = require('serve-index');
 const bodyParser = require('body-parser');
 const path = require('path');
 
-let rootStyleCat = require('path').dirname('public/catalogos/style.css');
+let rootStyleCat = 'public/catalogos/style.css';
 let rootPublic = require('path').dirname('/public');
-let rootCatalogo = require('path').dirname('/public/catalogos');
 
 var app = express();
 app.use(bodyParser.json());
@@ -19,12 +18,13 @@ app.get('/', function(req, res) {
   res.sendFile(path.resolve('public/index.html'));
 });
 
-app.route('/catalogos')
-    use(express.static('public/catalogos'), serveIndex('public/catalogos/media', {
-    icons: true,
-    template: 'public/catalogos/template.html',
-    stylesheet: rootStyleCat
-  }))
+
+app.use('/catalogos', express.static('public/catalogos'), serveIndex('public/catalogos/media', {
+  icons: true,
+  template: 'public/catalogos/template.html',
+  stylesheet: rootStyleCat
+}))
+
 
 
 
