@@ -10,8 +10,6 @@ let rootStyleCat = 'public/catalogos/style.css';
 let rootPublic = require('path').dirname('/public');
 
 var app = express();
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.get('/', function(req, res) {
