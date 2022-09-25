@@ -2,7 +2,6 @@ const {chromium} = require( 'playwright');
 var CronJob = require('cron').CronJob;
 
 const express = require('express');
-const serveIndex = require('serve-index');
 const bodyParser = require('body-parser');
 const path = require('path');
 
@@ -10,8 +9,6 @@ let rootStyleCat = 'public/catalogos/style.css';
 let rootPublic = require('path').dirname('/public');
 
 var app = express();
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.get('/', function(req, res) {
