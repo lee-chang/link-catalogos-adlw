@@ -2,18 +2,22 @@ const {chromium} = require( 'playwright');
 var CronJob = require('cron').CronJob;
 
 const express = require('express');
-const bodyParser = require('body-parser');
+
 const path = require('path');
 
-let rootStyleCat = 'public/catalogos/style.css';
-let rootPublic = require('path').dirname('/public');
+const app = express();
 
-var app = express();
 app.use(express.static('public'));
 
 app.get('/', function(req, res) {
   res.sendFile(path.resolve('public/index.html'));
 });
+
+const PORT = process.env.PORT || 3000;
+// Listen
+app.listen(PORT,function(){
+    console.log('Servidor listo en el puerto',PORT);
+})
 
 
 var job = new CronJob(
@@ -26,12 +30,6 @@ var job = new CronJob(
 	true,
 	'America/Los_Angeles'
 );
-
-const PORT = process.env.PORT || 3000;
-// Listen
-app.listen(PORT,function(){
-    console.log('Servidor listo en el puerto',PORT);
-})
 
 
 class Main {
