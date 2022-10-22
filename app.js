@@ -5,6 +5,7 @@ const express = require('express');
 const serveIndex = require('serve-index');
 const bodyParser = require('body-parser');
 const path = require('path');
+const fs = require('fs');
 
 let rootStyleCat = 'public/catalogos/style.css';
 let rootPublic = require('path').dirname('/public');
@@ -16,13 +17,11 @@ app.get('/', function(req, res) {
   res.sendFile(path.resolve('public/index.html'));
 });
 
-
-app.use('/catalogos', express.static('public/catalogos'), serveIndex('public/catalogos/media', {
+app.use('/catalogos', express.static('public/catalogos/media'), serveIndex('public/catalogos/media', {
   icons: true,
   template: 'public/catalogos/template.html',
   stylesheet: rootStyleCat
 }))
-
 
 
 
