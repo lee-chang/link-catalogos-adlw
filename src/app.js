@@ -70,7 +70,7 @@ class Main {
       
           //Todos los productos talla 39
           await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual?idTalla=7',  {timeout: 0} )
-          await page.pdf({ path: 'src/catalogos/upload/Talla39-Zicca.pdf', format: 'A5', margin: {top: '0.5cm', bottom: '0.5cm', left: '0.5cm', right: '0.5cm'}})
+          await page.pdf({ path: 'src/catalogos/upload/Talla39-Zicca.pdf', width: '21cm', height: '29.6cm', margin: {top: '1cm', bottom: '1cm', left: '1cm', right: '1cm'}})
       
           await browser. close()
       
