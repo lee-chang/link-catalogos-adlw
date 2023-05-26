@@ -71,6 +71,22 @@ class Main {
           //Todos los productos talla 39
           await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual?idTalla=7',  {timeout: 0} )
           await page.pdf({ path: 'src/catalogos/upload/Talla39-Zicca.pdf', width: '21cm', height: '29.6cm', margin: {top: '1cm', bottom: '1cm', left: '1cm', right: '1cm'}})
+
+          //Todos los productos Botines
+          await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual?idCategoria=84',  {timeout: 0} )
+          await page.pdf({ path: 'src/catalogos/upload/Botines-Zicca.pdf', width: '21cm', height: '29.6cm', margin: {top: '1cm', bottom: '1cm', left: '1cm', right: '1cm'}})
+
+          //Todos los productos Botas
+          await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual?idCategoria=87',  {timeout: 0} )
+          await page.pdf({ path: 'src/catalogos/upload/Botas-Zicca.pdf', width: '21cm', height: '29.6cm', margin: {top: '1cm', bottom: '1cm', left: '1cm', right: '1cm'}})
+
+          //Todos los productos Cerrados
+          await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual?idCategoria=83',  {timeout: 0} )
+          await page.pdf({ path: 'src/catalogos/upload/Cerrados-Zicca.pdf', width: '21cm', height: '29.6cm', margin: {top: '1cm', bottom: '1cm', left: '1cm', right: '1cm'}})
+
+          //Todos los productos Sandalias
+          await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual?idCategoria=88',  {timeout: 0} )
+          await page.pdf({ path: 'src/catalogos/upload/Sandalias-Zicca.pdf', width: '21cm', height: '29.6cm', margin: {top: '1cm', bottom: '1cm', left: '1cm', right: '1cm'}})
       
           await browser. close()
       
