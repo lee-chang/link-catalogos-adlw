@@ -1,2 +1,2 @@
 /node_modules
-/public/catalogos/media/*.pdf
+/src/catalogos/upload/*.pdf
