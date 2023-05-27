@@ -51,12 +51,6 @@ class Main {
 
           //Preparando la pagina
           await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual',  {timeout: 0} )
-          await page.waitForTimeout(5000);
-
-          //Todos los productos
-          await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual',  {timeout: 0} )
-          await page.waitForTimeout(5000);
-          await page.pdf({ path: 'src/catalogos/upload/Todas-Tallas-Zicca.pdf', width: '21cm', height: '29.6cm', margin: {top: '1cm', bottom: '1cm', left: '1cm', right: '1cm'},printBackground: true})
       
           //Todos los productos talla 35
           await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual?idTalla=3',  {timeout: 0} )
@@ -102,6 +96,11 @@ class Main {
           await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual?idCategoria=88',  {timeout: 0} )
           await page.waitForTimeout(5000);
           await page.pdf({ path: 'src/catalogos/upload/Sandalias-Zicca.pdf', width: '21cm', height: '29.6cm', margin: {top: '1cm', bottom: '1cm', left: '1cm', right: '1cm'},printBackground: true})
+
+          //Todos los productos
+          await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual',  {timeout: 0} )
+          await page.waitForTimeout(5000);
+          await page.pdf({ path: 'src/catalogos/upload/Todas-Tallas-Zicca.pdf', width: '21cm', height: '29.6cm', margin: {top: '1cm', bottom: '1cm', left: '1cm', right: '1cm'},printBackground: true})
       
           await browser. close()
       
