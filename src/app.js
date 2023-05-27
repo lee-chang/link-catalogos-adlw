@@ -48,6 +48,11 @@ class Main {
 
           const browser = await chromium.launch()
           const page = await browser.newPage()
+
+          //Preparando la pagina
+          await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual',  {timeout: 0} )
+          await page.waitForTimeout(5000);
+
           //Todos los productos
           await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual',  {timeout: 0} )
           await page.waitForTimeout(5000);
