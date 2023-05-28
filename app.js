@@ -2,7 +2,7 @@
   var CronJob = require('cron').CronJob;
 
   var job = new CronJob(
-    '*/1 * * * *',
+    '*/5 * * * *',
     function() {
           Main.update();
     },
