@@ -3,23 +3,14 @@
 
   const express = require('express');
   const serveIndex = require('serve-index');
-  const bodyParser = require('body-parser');
   const path = require('path');
-  const fs = require('fs');
 
   var app = express();
   app.use(express.static('public'));
 
-  app.get('/', function(req, res) {
-    res.sendFile(path.resolve('src/index.html'));
-  });
-
-  //express static files
-  app.use('/public', express.static('src/public'));
-
-  app.use('/catalogos', express.static('src/catalogos/upload'), serveIndex('src/catalogos/upload', {
+  app.use('/', express.static('src/upload'), serveIndex('src/upload', {
     icons: true,
-    template: 'src/catalogos/template.html',
+    template: 'src/template.html',
   }))
 
 
