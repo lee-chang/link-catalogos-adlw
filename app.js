@@ -23,6 +23,10 @@
             await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual',  {timeout: 0} )
             await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual',  {timeout: 0} )
             await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual',  {timeout: 0} )
+
+            //Todos los productos talla 34
+            await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual?idTalla=2',  {timeout: 0} )
+            await page.pdf({ path: 'media/Talla34-Zicca.pdf', width: '21cm', height: '29.6cm', margin: {top: '1cm', bottom: '1cm', left: '1cm', right: '1cm'},  printBackground: true  })
         
             //Todos los productos talla 35
             await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual?idTalla=3',  {timeout: 0} )
@@ -43,6 +47,10 @@
             //Todos los productos talla 39
             await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual?idTalla=7',  {timeout: 0} )
             await page.pdf({ path: 'media/Talla39-Zicca.pdf', width: '21cm', height: '29.6cm', margin: {top: '1cm', bottom: '1cm', left: '1cm', right: '1cm'}, printBackground: true })
+
+            //Todos los productos talla 40
+            await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual?idTalla=8',  {timeout: 0} )
+            await page.pdf({ path: 'media/Talla40-Zicca.pdf', width: '21cm', height: '29.6cm', margin: {top: '1cm', bottom: '1cm', left: '1cm', right: '1cm'}, printBackground: true })
 
             //Todos los productos Botines
             await page.goto('https://zicca.pe/Productos/ListaProductosTiendaVirtual?idCategoria=84',  {timeout: 0} )
